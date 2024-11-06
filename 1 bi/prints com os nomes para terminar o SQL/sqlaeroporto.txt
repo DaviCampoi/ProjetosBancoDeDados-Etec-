@@ -1,0 +1,7 @@
+1-
+Select tb04_numero_voo, tb04_data, tb04_hora FROM tb04_voo
+where tb04_aeroporto="cumbica"; 
+2-
+Select tb04_numero_voo, tb04_hora, tb04_data, tb04_aeroporto from tb04_voo join tb01_aeronave ON tb04_aeronave = tb01_aeronave where tb04_aeronave = "boing 777"; 
+3-
+ Select tb03_nome , tb04_numero_voo, tb04_aeroporto, tb04_destino from tb04_voo join tb05_tripulacao on tb04_numero_voo = tb05_cod_voo join tb03_tripulantes on tb03_cod_trip = tb05_cod_trip WHERE tb04_numero_voo = 3042 and tb03_cargo ="comissario"; 

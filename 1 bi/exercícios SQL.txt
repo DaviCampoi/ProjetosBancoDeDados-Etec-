@@ -1,0 +1,28 @@
+1) Consultar todos os vôos que partem do aeroporto de "Cumbica". Apresentar data, hora, número do vôo.
+
+2) Consultar os vôos que utilizam aeronaves "Boing777", apresentar número do vôo, data, hora e código do aeroporto.
+
+3) Consultar os tripulantes do vôo 3042 com cargo comissário. Apresentar número de vôo, aeroporto de origem e aeroporto de destino.
+
+----------------------------------------------------------------------
+
+1) Select tb04_data, tb04_hora, `tb04_cod-voo` from tb04_voo join tb02_aeroporto on `tb02_cod-aero` = `tb04_aeroporto-origem`
+	where tb02_nome = "Cumbica"; 
+
+2) Select `tb04_cod-voo`, tb04_data, tb04_hora, `tb04_aeroporto-origem` from tb04_voo join tb01_aeronave on `tb01_cod-aeronave` = `tb04_cod-aeronave`
+	where `tb01_nome-aeronave` = "boing777";
+
+3) Select `tb04_cod-voo`, `tb04_aeroporto-origem`, `tb04_aeroporto-destino` from tb04_voo join tb03_tripulacao on `tb03_cod-tripulacao` = `tb03_cod-tripulacao` join tb05_tripulante on `tb03_cod-tripulacao` = `tb05_cod-tripulacao` 
+	where `tb04_cod-voo` = 3042 and tb05_cargo = "Comissário";
+
+---------------------------------------------------------------------------------------
+405710197
+481689214
+614341736
+774518938
+817235720
+817361598
+899645603
+926817587
+953411924
+981792262

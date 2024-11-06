@@ -1,0 +1,8 @@
+BEGIN
+
+INSERT INTO tb99_teste
+SET tb99_descricao = 'Serginho',
+    tb99_data = now(),
+    tb99_valor = 1000;
+
+END

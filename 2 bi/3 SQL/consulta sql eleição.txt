@@ -1,0 +1,13 @@
+
+SELECT tb04_numero_candidato, tb03_nome, tb03_foto, tb02_nome, tb01_nome 
+FROM tb04_eleicao JOIN tb03_candidato ON tb04_cpf = tb03_cpf
+ JOIN tb02_cargo ON tb04_cod_cargo = tb02_cod_cargo 
+JOIN tb01_partido ON tb01_cod_partido = tb04_cod_partido WHERE YEAR(tb04_data) = 2018;
+
+SELECT year(tb04_data) as ano, COUNT(*) FROM tb02_cargo JOIN tb04_eleicao ON tb04_cod_cargo = tb02_cod_cargo 
+WHERE year(tb04_data) BETWEEN 2014 AND 2022 AND tb02_nome = "Presidente" GROUP BY tb04_data;
+
+SELECT tb04_numero_candidato, tb03_nome, tb02_nome, tb01_nome, tb03_foto FROM tb04_eleicao 
+JOIN tb03_candidato ON tb04_cpf = tb03_cpf 
+JOIN tb02_cargo ON tb04_cod_cargo = tb02_cod_cargo
+JOIN tb01_partido ON tb04_cod_partido = tb01_cod_partido WHERE tb04_numero_candidato = 141;

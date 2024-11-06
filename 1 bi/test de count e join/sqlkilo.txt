@@ -1,0 +1,31 @@
+selecionar o tipo total e a descriçao
+
+SELECT COUNT(*) AS total, tb01_tipo, tb03_descricao
+FROM tb01_pratos JOIN tb03_tipo
+ON tb01_tipo = tb03_codigo
+GROUP BY tb01_tipo; 
+
+SELECT SUM(tb01_valor),
+tb01_tipo, tb03_descricao
+FROM tb01_pratos JOIN tb03_tipo
+ON tb01_tipo = tb03_codigo
+GROUP BY tb01_tipo
+
+-----
+ORDER BY tb01_tipo desc; = serve para decidir a ordem 
+----------------------------------------------------------
+
+exercicios:
+1- Contar quantos pratos começam com a letra "B"
+2- Somar os valores dos pratos agrupados, tipo de valores superiores a r$10,00 = somar todos os valores dos pratos que valem mais que 10
+3- apresentar a média dos pesos e dos valores agrupados pelo tipo dos pratos abaixo de r$10,00 e peso acima de 12
+
+-------------------------------------------------------------------
+
+respostas:
+1- SELECT COUNT(*) AS total
+FROM tb01_pratos
+WHERE tb01_descricao LIKE 'B%';
+
+2- SELECT SUM(tb01_valor) AS total
+FROM tb01_pratos WHERE tb01_valor>10

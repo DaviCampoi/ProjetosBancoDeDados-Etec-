@@ -1,0 +1,8 @@
+select * from tb02_cardapio;
+select * from tb05_produtos
+where tb05_unidade = "KG" && tb05_preco >100;
+select * from tb04_tipo 
+where tb04_tipo = 2 ;
+select  tb01_CNPJ, tb01_email, tb01_telefone from tb01_lanchonete ;
+select tb02_preco, tb02_descricao from tb02_cardapio
+where tb02_tipo between 1 and 3 tb02_nome like “%peixe%”;
